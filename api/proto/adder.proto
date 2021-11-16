@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package api; // package of generated .go files
+
+option go_package = "pkg/api"; //destination folder
+
+service Adder {
+  rpc Add(AddRequest) returns (AddResponse) {}
+}
+
+message AddRequest {
+  int32 x = 1;
+  int32 y = 2;
+}
+
+message AddResponse {
+  int32 result = 1;
+}
